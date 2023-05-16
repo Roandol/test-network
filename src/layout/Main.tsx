@@ -6,11 +6,22 @@ interface MainProps {
 }
 
 const Main = ({ children }: MainProps) => {
-    const matches = useMediaQuery('(max-width:420px)');
+    const matches = useMediaQuery('(max-width:500px)');
+    const { innerWidth } = window;
+    console.log(matches)
 
     return (
         <>
-            <Container sx={{ minHeight: '100vh', width: matches ? window.innerWidth : '700px' }}>
+            <Container sx={
+                matches ? {
+                    minHeight: '100vh',
+                    maxWidth: innerWidth,
+                    padding: '0'
+                } : {
+                    minHeight: '100vh',
+                    maxWidth: innerWidth
+                } 
+                }>
                 {children}
             </Container>
         </>
