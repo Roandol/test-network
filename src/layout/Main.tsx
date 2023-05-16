@@ -15,7 +15,8 @@ const Main = ({ children }: MainProps) => {
                 matches ? {
                     minHeight: '100vh',
                     maxWidth: innerWidth,
-                    padding: '0'
+                    padding: '0',
+                    margin: '0'
                 } : {
                     minHeight: '100vh',
                     maxWidth: innerWidth

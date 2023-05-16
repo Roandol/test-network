@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { RootState } from '../redux/reducers/types/reducers';
-import { Box, Button, Stack, Typography } from '@mui/material';
+import { Box, Button, Stack, Typography, useMediaQuery } from '@mui/material';
 import { CreatePost, PostsContainer } from '../components';
 import { logoutUser } from '../actions';
 import { getPosts } from '../actions/actions';
@@ -10,6 +10,8 @@ import { ArrowUpward, ExitToApp } from '@material-ui/icons';
 
 
 const Home = () => {
+    const matches = useMediaQuery('(max-width:500px)');
+    const { innerWidth } = window;
     const login: string = useSelector((state: RootState) => state.user).username;
     const route = useNavigate();
     const dispatch = useDispatch();
@@ -20,7 +22,7 @@ const Home = () => {
     const getData = getPosts(url);
     const updateList = (_url: string = '') => {
         setLoading(true);
-            setUrl(_url);
+        setUrl(_url);
     }
 
     const handleScroll = () => {
@@ -69,8 +71,8 @@ const Home = () => {
 
     return (
         <>
-            {login && <Box sx={{ minHeight: '100%', maxWidth:'100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Stack spacing={0} sx={{ backgroundColor: 'white' }}>
+            {login && <Box sx={{ minHeight: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <Stack spacing={0} sx={{ backgroundColor: 'white', width: matches ? innerWidth : '700px' }}>
                     <Stack spacing={2} direction='row' sx={{
                         backgroundColor: '#7695ec',
                         height: '100px',

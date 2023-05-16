@@ -23,7 +23,7 @@ const CreatePost = () => {
             <Box sx={{
                 backgroundColor: 'white',
                 padding: '20px',
-                maxWidth: '100%'
+                width: '100%'
             }}>
                 <Box sx={{
                     border: '1px solid #999999',
