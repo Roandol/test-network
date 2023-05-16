@@ -48,7 +48,7 @@ const Post = ({ title, username, postTime, content, logged, editSave, deletePost
         <Grow in={checked}>
             <div>
                 <Card style={{
-                    borderRadius: '8px',
+                    borderRadius: '12.5px',
                     border: '1px solid lightgray',
                     minHeight: '100px',
                     maxWidth: '100%',
