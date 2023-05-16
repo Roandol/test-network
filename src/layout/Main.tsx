@@ -8,7 +8,6 @@ interface MainProps {
 const Main = ({ children }: MainProps) => {
     const matches = useMediaQuery('(max-width:500px)');
     const { innerWidth } = window;
-    console.log(matches)
 
     return (
         <>
